@@ -1,10 +1,185 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>你好，GitHub</title>
-  </head>
-  <body>
-    <h1>覺得厲害</h1>
-  </body>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!---->
+  <!-- JQuary -->
+  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+
+  <!---->
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <style>
+    .dropdown:hover>.dropdown-menu {
+      display: block;
+    }
+
+    .nav-link {
+      color: gray;
+    }
+
+
+    .nav-small {
+      margin-left: 5px;
+      font-size: 15px;
+      margin-top: 10px;
+
+    }
+  </style>
+  <script>
+    $(function () {
+      var $li = $('ul.tab-title li');
+      $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+
+      $li.click(function () {
+        $($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
+        $(this).addClass('active').siblings('.active').removeClass('active');
+      });
+    });
+  </script>
+  <div id="tab-demo">
+    <div class="row" style="background-color:darkgoldenrod">
+      <div class="col-3 "> </div>
+      <div class="col-6 d-flex justify-content-end align-items-center">
+        <a class="text-muted" href="#">FREE SHIPPING</a>
+        <a class="btn btn-sm btn-outline-secondary" href="#" style="margin-left: 10px;">Sign up</a>
+      </div>
+      <div class="col-3 "> </div>
+    </div>
+    <div class="row" style="background-color:black">
+
+    </div>
+    <div class="row" style="background-color:black">
+      <div class="col-3 "> </div>
+      <ul class="nav nav-pills tab-title">
+
+        <li class="nav-item">
+          <a class="nav-link " href="#HOME" style="font-size:25px;">VESTE </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-small " href="#HOME" style="margin-left: 40px; color: white">HOME</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle nav-small" data-toggle="dropdown" href="#COLLECTION" role="button"
+            aria-haspopup="true" aria-expanded="false">COLLECTION</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">WOMEN</a>
+            <a class="dropdown-item" href="#">MEN</a>
+            <a class="dropdown-item" href="#">ACCESSORIES</a>
+            <a class="dropdown-item" href="#">SALE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-small" href="#MY_CART">MY CART</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-small" href="#">MY ACCOUNT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-small" href="#">RETURN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-small" href="#">PAY BILLS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-small" href="#">SETTINGS</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle nav-small" data-toggle="dropdown" href="#" role="button"
+            aria-haspopup="true" aria-expanded="false">MORE</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">MORE</a>
+            <a class="dropdown-item" href="#">MY STYLISTS</a>
+            <a class="dropdown-item" href="#">LOG OUT</a>
+
+        </li>
+        <div class="col-3 "> </div>
+    </div>
+    <div id="HOME" class="tab-inner row">
+      <div class="row mb-2">
+        <div class="col-3 "> </div>
+        <div class="col-md-3">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">World</strong>
+              <h3 class="mb-0">Featured post</h3>
+              <div class="mb-1 text-muted">Nov 12</div>
+              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to
+                additional content.</p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              {% include icons/placeholder.svg width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0">Post title</h3>
+              <div class="mb-1 text-muted">Nov 11</div>
+              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional
+                content.</p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              {% include icons/placeholder.svg width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" %}
+            </div>
+          </div>
+          <div class="col-3 "> </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-3"></div>
+  </div>
+  <div id="WOMEN" class="tab-inner">
+    <p>tab02的內容</p>
+  </div>
+  <div id="MEN" class="tab-inner">
+    <p>tab02的內容</p>
+  </div>
+  <div id="ACCESSORIES" class="tab-inner">
+    <p>tab02的內容</p>
+  </div>
+  <div id="SALE" class="tab-inner">
+    <p>tab02的內容</p>
+  </div>
+  <div id="MY_CART" class="tab-inner">
+    <p>tab02的內容</p>
+  </div>
+  <div id="tab03" class="tab-inner">
+    <p>tab03的內容</p>
+  </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
 </html>
