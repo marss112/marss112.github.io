@@ -61,6 +61,10 @@
     .inner:hover img {
       transform: scale(1.2);
     }
+
+    .women-man-cardText {
+      height: 80px;
+    }
   </style>
   <script>
     $(function () {
@@ -71,6 +75,20 @@
         $($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
         $(this).addClass('active').siblings('.active').removeClass('active');
       });
+      $('.dropdown-item').click(function () {
+        $($(this).attr('href')).show().siblings('.tab-inner').hide();
+        $(this).addClass('active').siblings('.active').removeClass('active');
+      });
+
+
+      var $link = $('.img-link');
+      $link.click(function () {
+        $($(this).attr('href')).show().siblings('.tab-inner').hide();
+        $(this).addClass('active').siblings('.active').removeClass('active');
+
+      });
+
+
       $("#home-card1").hover(
         function () {
           $("#home-card-text1-1").text("VIEW DETAILS");
@@ -130,11 +148,10 @@
             <a class="nav-link nav-small " href="#HOME" style="margin-left: 40px; color: white">HOME</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-small" data-toggle="dropdown" href="#COLLECTION" role="button"
-              aria-haspopup="true" aria-expanded="false">COLLECTION</a>
+            <a class="nav-link dropdown-toggle nav-small">COLLECTION</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">WOMEN</a>
-              <a class="dropdown-item" href="#">MEN</a>
+              <a class="dropdown-item" href="#WOMEN">WOMEN</a>
+              <a class="dropdown-item" href="#MEN">MEN</a>
               <a class="dropdown-item" href="#">ACCESSORIES</a>
               <a class="dropdown-item" href="#">SALE</a>
           </li>
@@ -169,7 +186,7 @@
       <div class="row">
         <div class="col"> </div>
         <div class="col-md-3 col-sm-3" style=" padding: 0%">
-          <a href="#"><img src="/img/home1.png" class="fillDivImg"></a>
+          <a href="#MEN" class="img-link"><img src="/img/home1.png" class="fillDivImg"></a>
         </div>
         <div class="col-md-3 col-sm-3" style="  padding: 0%">
           <img src="/img/home1.png" class="fillDivImg">
@@ -182,7 +199,7 @@
           <img src="/img/home1.png" class="fillDivImg">
         </div>
         <div class="col-md-3 col-sm-3" style=" padding: 0%">
-          <a href="#"><img src="/img/home1.png" class="fillDivImg"></a>
+          <a href="#WOMEN" class="img-link"><img src="/img/home1.png" class="fillDivImg"></a>
         </div>
         <div class="col"> </div>
       </div>
@@ -207,19 +224,19 @@
           </div>
         </div>
         <div class="col-md-2 col-sm-2 home_zoom">
-            <div id="home-card2" class="card" onclick="location.href=
+          <div id="home-card2" class="card" onclick="location.href=
               '#'">
-              <div class="inner">
-                <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
-              </div>
-              <div class="card-body text-center">
-                <span id="home-card-text2-1" class="card-title ">SLIM FIT CHINOS</span>
-                <br> <span id="" class="card-title "></span>
-                <span id="home-card-text2-2" class="card-title home-card">NT45.00</span>
-  
-              </div>
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class="card-body text-center">
+              <span id="home-card-text2-1" class="card-title ">SLIM FIT CHINOS</span>
+              <br> <span id="" class="card-title "></span>
+              <span id="home-card-text2-2" class="card-title home-card">NT45.00</span>
+
             </div>
           </div>
+        </div>
         <div class="col-md-2 col-sm-2 home_zoom">
           <div id="home-card3" class="card" onclick="location.href=
           '#'">
@@ -274,12 +291,244 @@
         <div class="col"> </div>
       </div>
     </div>
-   
+
     <div id="WOMEN" class="tab-inner">
-      <p>tab02的內容</p>
+      <div class="row">
+        <div class="mx-auto text-center">
+          <h1 class="display-4">WOMEN</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-2 col-sm-2 home_zoom">
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-2 col-sm-2 home_zoom">
+          <div id="home-card2" class="card" onclick="location.href=
+                  '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>PRINTED CHIFFON DRESS</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div id="home-card2" class="card" onclick="location.href=
+                    '#'">
+            <div class="inner">
+              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            </div>
+            <div class=" text-center women-man-cardText">
+              <h6> <small>I'm a Product</small></h6>
+              <h6> <small>NT19.99</small></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6 ">
+          <div class=" text-center" style=" overflow: hidden;">
+            <img src="./img/women_make_it_sample.png">
+          </div>
+          <div class="text-center">
+            <div class="w-100"></div>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">Up to 5000$</button>
+            <div class="w-100"></div>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">Up to 10000$</button>
+            <div class="w-100"></div>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">On Sale!</button>
+            <div class="w-100"></div>
+
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">Show All</button>
+          </div>
+
+        </div>
+        <div class="col"></div>
+      </div>
     </div>
     <div id="MEN" class="tab-inner">
-      <p>tab0的內容</p>
+        <div class="row">
+            <div class="mx-auto text-center">
+              <h1 class="display-4">MEN</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-md-2 col-sm-2 home_zoom">
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-md-2 col-sm-2 home_zoom">
+              <div id="home-card2" class="card" onclick="location.href=
+                      '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>PRINTED CHIFFON DRESS</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div id="home-card2" class="card" onclick="location.href=
+                        '#'">
+                <div class="inner">
+                  <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+                </div>
+                <div class=" text-center women-man-cardText">
+                  <h6> <small>I'm a Product</small></h6>
+                  <h6> <small>NT19.99</small></h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-6 ">
+              <div class=" text-center" style=" overflow: hidden;">
+                <img src="./img/men_make_it_sample.png">
+              </div>
+              <div class="text-center">
+                <div class="w-100"></div>
+                <button type="button" class="btn btn-success" style="margin-top:50px">Up to 5000$</button>
+                <div class="w-100"></div>
+                <button type="button" class="btn btn-success" style="margin-top:50px">Up to 10000$</button>
+                <div class="w-100"></div>
+                <button type="button" class="btn btn-success" style="margin-top:50px">On Sale!</button>
+                <div class="w-100"></div>
+    
+                <button type="button" class="btn btn-success" style="margin-top:50px">Show All</button>
+              </div>
+    
+            </div>
+            <div class="col"></div>
+          </div>
     </div>
     <div id="ACCESSORIES" class="tab-inner">
       <p>tab02的內容</p>
@@ -297,39 +546,39 @@
 
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
-      <div class="row">
-          <div class="col-md-3 col-sm-2">
-            </div>
-        <div class="col-md-1 col-sm-1">
-          <h5>VESTE</h5>
-        </div>
-        <div class="col-md-2 col-sm-1">
-          <h6>CUSTOMER CARE</h6>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Shipping Policy</a></li>
-            <li><a class="text-muted" href="#">Returns Policy</a></li>
-            <li><a class="text-muted" href="#">Contact Us</a></li>
-            <li><a class="text-muted" href="#">About Us</a></li>
-          </ul>
-        </div>
-        <div class="col-md-1 col-sm-1">
-          <h6>VIST OUR STORE</h6>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">
-                500 Terry Francois Street<br>
-                San Francisco, CA 94158</a></li>
-
-          </ul>
-        </div>
-        <div class="col-md-1 col-sm-1">
-          <h6>STAY CONNECTED</h6>
-         
-        </div>
-        <div class="col-md col-sm">
-
-        </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-2">
       </div>
-    </footer>
+      <div class="col-md-1 col-sm-1">
+        <h5>VESTE</h5>
+      </div>
+      <div class="col-md-2 col-sm-1">
+        <h6>CUSTOMER CARE</h6>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Shipping Policy</a></li>
+          <li><a class="text-muted" href="#">Returns Policy</a></li>
+          <li><a class="text-muted" href="#">Contact Us</a></li>
+          <li><a class="text-muted" href="#">About Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-1 col-sm-1">
+        <h6>VIST OUR STORE</h6>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">
+              500 Terry Francois Street<br>
+              San Francisco, CA 94158</a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-1 col-sm-1">
+        <h6>STAY CONNECTED</h6>
+
+      </div>
+      <div class="col-md col-sm">
+
+      </div>
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
