@@ -68,5 +68,9 @@ function magnify(imgID, zoom) {
   
     return flag;  
  }
- if(IsPC()) 
-    magnify("pleated_skirt_model1", 3);
+ if(IsPC()) {
+  magnify("pleated_skirt_model", 3);
+ magnify("slim_fit_chinos_model", 3);
+  magnify("printed_chiffion_dress", 3);
+ }
+   
