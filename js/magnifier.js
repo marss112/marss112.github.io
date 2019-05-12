@@ -10,6 +10,7 @@ function magnify(imgID, zoom) {
     img.parentElement.insertBefore(glass, img);
   
     /* Set background properties for the magnifier glass: */
+   
     glass.style.backgroundImage = "url('" + img.src + "')";
     glass.style.backgroundRepeat = "no-repeat";
     glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
@@ -20,11 +21,14 @@ function magnify(imgID, zoom) {
     /* Execute a function when someone moves the magnifier glass over the image: */
     glass.addEventListener("mousemove", moveMagnifier);
     img.addEventListener("mousemove", moveMagnifier);
-  
+    img.addEventListener("mouseout", mouseout);
+    glass.addEventListener("mouseout", mouseout);
+    //img.addEventListener("mouseout", mouseout);
     /*and also for touch screens:*/
     glass.addEventListener("touchmove", moveMagnifier);
     img.addEventListener("touchmove", moveMagnifier);
     function moveMagnifier(e) {
+      glass.style.visibility="visible"; 
       var pos, x, y;
       /* Prevent any other actions that may occur when moving over the image */
       e.preventDefault();
@@ -44,6 +48,11 @@ function magnify(imgID, zoom) {
       glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
     }
   
+
+    function mouseout(e) {
+      console.log("mouse out ");
+      glass.style.visibility="hidden"; 
+    }
     function getCursorPos(e) {
       var a, x = 0, y = 0;
       e = e || window.event;
@@ -69,8 +78,8 @@ function magnify(imgID, zoom) {
     return flag;  
  }
  if(IsPC()) {
-  magnify("pleated_skirt_model", 3);
- magnify("slim_fit_chinos_model", 3);
+  magnify("productImg", 3);
+  magnify("slim_fit_chinos_model", 3);
   magnify("printed_chiffion_dress", 3);
  }
    

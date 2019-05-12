@@ -20,6 +20,7 @@
   <!---->
 
   <link rel="stylesheet" type="text/css" href="./css/magnifier.css">
+  <script type="text/javascript" src="./js/product.js"></script>
   <title>NTUT_Shpping</title>
 
 
@@ -50,6 +51,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .productImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
     }
 
     .inner {
@@ -121,20 +129,68 @@
           $("#home-card-text3-2").text("NT49.00");
         }
       );
+      $(function () {
+        var imgNumberSrc = "";
+        // var $img = $('.productCard a img');
+        $('.women-productCard').hover(function () {
+          var $img = $(this).children("a").children("img");
 
 
+          var imgSrc = $img.attr("src");
+
+          $img.attr('src', "./img/women/product" + imgSrc[19] + "-2.png");
+        }, function () {
+          var $img = $(this).children("a").children("img");
+          var imgSrc = $img.attr("src");
+          $img.attr('src', "./img/women/product" + imgSrc[19] + "-1.png");
+
+        }
+        );
+      });
+      $(function () {
+        var imgNumberSrc = "";
+        // var $img = $('.productCard a img');
+        $('.men-productCard').hover(function () {
+          var $img = $(this).children("a").children("img");
+
+
+          var imgSrc = $img.attr("src");
+
+          $img.attr('src', "./img/men/product" + imgSrc[19] + "-2.png");
+        }, function () {
+          var $img = $(this).children("a").children("img");
+          var imgSrc = $img.attr("src");
+          $img.attr('src', "./img/men/product" + imgSrc[19] + "-1.png");
+        //  console.log(imgSrc[27]);
+        //  console.log("./img/accessories/product"+  imgSrc[25] + "-2.png");
+         
+        }
+        );
+      });
+      $(function () {
+        var imgNumberSrc = "";
+        // var $img = $('.productCard a img');
+        $('.accessories-productCard').hover(function () {
+          var $img = $(this).children("a").children("img");
+
+
+          var imgSrc = $img.attr("src");
+       
+          $img.attr('src', "./img/accessories/product" + imgSrc[25] + "-2.png");
+        }, function () {
+          var $img = $(this).children("a").children("img");
+          var imgSrc = $img.attr("src");
+          $img.attr('src', "./img/accessories/product" + imgSrc[25] + "-1.png");
+
+         
+        }
+        );
+      });
     });
 
   </script>
   <div id="tab-demo">
-    <div class="row" style="background-color:darkgoldenrod">
-      <div class="col "> </div>
-      <div class="col-md-6 col-sm-12 d-flex justify-content-end align-items-center">
-        <a class="text-muted" href="#">FREE SHIPPING</a>
-        <a class="btn btn-sm btn-outline-secondary" href="#" style="margin-left: 10px;">Sign up</a>
-      </div>
-      <div class="col"> </div>
-    </div>
+
     <div class="row" style="background-color:black">
 
     </div>
@@ -150,8 +206,8 @@
             <a class="nav-link nav-small " href="#HOME" style="margin-left: 40px; color: white">HOME</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-small"  data-toggle="dropdown" href="#" role="button"
-            aria-haspopup="true" aria-expanded="false">COLLECTION</a>
+            <a class="nav-link dropdown-toggle nav-small" data-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false">COLLECTION</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#WOMEN">WOMEN</a>
               <a class="dropdown-item" href="#MEN">MEN</a>
@@ -187,24 +243,26 @@
     </div>
     <div id="HOME" class="tab-inner">
       <div class="row">
-        <div class="col"> </div>
         <div class="col-md-3 col-sm-3" style=" padding: 0%">
           <a href="#MEN" class="img-link"><img src="/img/home1.png" class="fillDivImg"></a>
         </div>
+        <div class="col"> </div>
+
         <div class="col-md-3 col-sm-3" style="  padding: 0%">
           <img src="/img/home1.png" class="fillDivImg">
         </div>
         <div class="col"> </div>
       </div>
-      <div class="row" style="background-color:green">
+      <div class="row" style="background-color:black">
         <div class="col"> </div>
         <div class="col-md-3 col-sm-3" style=" padding: 0%">
           <img src="/img/home1.png" class="fillDivImg">
         </div>
+
+        <div class="col"> </div>
         <div class="col-md-3 col-sm-3" style=" padding: 0%">
           <a href="#WOMEN" class="img-link"><img src="/img/home1.png" class="fillDivImg"></a>
         </div>
-        <div class="col"> </div>
       </div>
       <div class="mx-auto text-center">
         <h1 class="display-4">PAIRED FOR YOU!</h1>
@@ -216,7 +274,7 @@
           <div id="home-card1" class="card" onclick="location.href=
             '#'">
             <div class="inner">
-              <a href="#PLEATED-SKIRT" class="img-link">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product1-1')">
                 <img src="/img/home_woman1.jpg" class="card-img-top " alt="">
               </a>
             </div>
@@ -232,7 +290,7 @@
           <div id="home-card2" class="card" onclick="location.href=
               '#'">
             <div class="inner">
-              <a href="#SLIM-FIT-CHINOS" class="img-link">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product1-1')">
                 <img src="/img/home_woman1.jpg" class="card-img-top " alt="">
               </a>
             </div>
@@ -244,12 +302,12 @@
             </div>
           </div>
         </div>
-        <div class="col-md-2 col-sm-2 home_zoom">
+        <div class="col-md-2 col-sm-2 home_zoom" onclick="productLoad(this,'women','product1-1')">
           <div id="home-card3" class="card" onclick="location.href=
           '#'">
             <a href="#"></a>
             <div class="inner">
-              <a href="#PRINTED-CHIFFON-DRESS" class="img-link">
+              <a href="#PRODUCT" class="img-link">
                 <img src="/img/home_woman1.jpg" class="card-img-top" alt="">
               </a>
             </div>
@@ -310,93 +368,110 @@
       <div class="row">
         <div class="col"></div>
         <div class="col-md-2 col-sm-2 home_zoom">
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card " onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class=" women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product1-1')">
+                <img src="./img/women/product1-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
               <h6> <small>NT19.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class=" women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product3-1')">
+                <img src="./img/women/product3-1.png" class="card-img-top " alt="#">
+
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
-              <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+            <div class="  women-man-cardText">
+              <h6> <small>PLEATED SKIRT</small></h6>
+              <h6> <small>NT49.00</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product5-1')">
+                <img src="./img/women/product5-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product7-1')">
+                <img src="./img/women/product7-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class=" women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
 
         </div>
         <div class="col-md-2 col-sm-2 home_zoom">
-          <div id="home-card2" class="card" onclick="location.href=
-                  '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+          <div class="card" onclick="location.href=
+            '#'">
+            <div class="women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product2-1')">
+                <img src="./img/women/product2-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>PRINTED CHIFFON DRESS</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small>NT120.00</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product4-1')">
+                <img src="./img/women/product4-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
               <h6> <small>NT19.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product6-1')">
+                <img src="./img/women/product6-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                     '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="women-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'women','product8-1')">
+                <img src="./img/women/product8-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class=" women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
         </div>
@@ -429,146 +504,156 @@
       <div class="row">
         <div class="col"></div>
         <div class="col-md-2 col-sm-2 home_zoom">
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card " onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class=" men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product1-1')">
+                <img src="./img/men/product1-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
               <h6> <small>NT19.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class=" men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product3-1')">
+                <img src="./img/men/product3-1.png" class="card-img-top " alt="#">
+
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
-              <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+            <div class="  women-man-cardText">
+              <h6> <small>PLEATED SKIRT</small></h6>
+              <h6> <small>NT49.00</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product5-1')">
+                <img src="./img/men/product5-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product7-1')">
+                <img src="./img/men/product7-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class=" women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
 
         </div>
         <div class="col-md-2 col-sm-2 home_zoom">
-          <div id="home-card2" class="card" onclick="location.href=
-                      '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+          <div class="card" onclick="location.href=
+                '#'">
+            <div class="men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product2-1')">
+                <img src="./img/men/product2-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>PRINTED CHIFFON DRESS</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small>NT120.00</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product4-1')">
+                <img src="./img/men/product4-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
               <h6> <small>NT19.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product6-1')">
+                <img src="./img/men/product6-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class="  women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
           <div class="w-100"></div>
-          <div id="home-card2" class="card" onclick="location.href=
+          <div class="card" onclick="location.href=
                         '#'">
-            <div class="inner">
-              <img src="/img/home_woman1.jpg" class="card-img-top " alt="#">
+            <div class="men-productCard">
+              <a href="#PRODUCT" class="img-link" onclick="productLoad(this,'men','product8-1')">
+                <img src="./img/men/product8-1.png" class="card-img-top " alt="#">
+              </a>
             </div>
-            <div class=" text-center women-man-cardText">
+            <div class=" women-man-cardText">
               <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
+              <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
             </div>
           </div>
         </div>
         <div class="col-md-2 col-sm-6 ">
           <div class=" text-center" style=" overflow: hidden;">
-            <img src="./img/men_make_it_sample.png">
+            <img src="./img/women_make_it_sample.png">
           </div>
           <div class="text-center">
             <div class="w-100"></div>
-            <button type="button" class="btn btn-success" style="margin-top:50px">Up to 5000$</button>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">Up to 5000$</button>
             <div class="w-100"></div>
-            <button type="button" class="btn btn-success" style="margin-top:50px">Up to 10000$</button>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">Up to 10000$</button>
             <div class="w-100"></div>
-            <button type="button" class="btn btn-success" style="margin-top:50px">On Sale!</button>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">On Sale!</button>
             <div class="w-100"></div>
 
-            <button type="button" class="btn btn-success" style="margin-top:50px">Show All</button>
+            <button type="button" class="btn btn-outline-warning  " style="margin-top:50px">Show All</button>
           </div>
 
         </div>
         <div class="col"></div>
       </div>
     </div>
-    <div id="PLEATED-SKIRT" class="tab-inner">
+    <div id="PRODUCT" class="tab-inner">
       <div class="row">
         <div class="col"></div>
-        <div class="col-md-6 col-sm-3">
-          <p>Home/PLEATED SKIRT</p>
+        <div class="col-md-4 col-sm-4">
+          <p id="productTitleName1-1">Home/PLEATED SKIRT</p>
         </div>
-        <div class="col-md-3 col-sm-3"> </div>
-        <div class="col-md-3 col-sm-3"> </div>
+        <div class="col-md-4 col-sm-4"> </div>
+
         <div class="col"></div>
       </div>
-
       <div class="row">
-        <div class="col-md-3 col-sm-3"></div>
-        <div class="col-md-3 col-sm-3">
-          <img id="pleated_skirt_model" src="./img/pleated_skirt/pleated_skirt_model1_big.png"></img>
-          <div class="w-100"></div>
-          <input type="image" src="./img/pleated_skirt/pleated_skirt_model1.png"
-            onclick="productImage(this,'pleated_skirt_model')">
-          <input type="image" src="./img/pleated_skirt/pleated_skirt_model2.png"
-            onclick="productImage(this,'pleated_skirt_model')">
-          <div class="w-100"></div>
-          <div>I'm a product description. I’m a great place to include more information about your product. Buyers like
-            to know what they’re getting before they purchase.</div>
+        <div class="col"></div>
+        <div class="col-md-4 col-sm-6 ">
+          <img id="productImg1-1" class="singleProductImage productImg"
+            src="./img/women/view_product/product1-1.png"></img>
+
         </div>
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-4 col-sm-4">
           <h4> PRINTED CHIFFON DRESS</h4>
           <div class="w-100"></div>
           <h6> SKU: 0015</h6>
           <div class="w-100"></div>
-          <h4> NT$120.00</h4>
+          <h4 id="productPrice1-1"> NT$120.00</h4>
           <div class="w-100"></div>
           <div class="form-group">
             <label for="sel1">Size:</label>
@@ -584,7 +669,7 @@
             </div>
 
           </div>
-          <div class="col-md-3 col-sm-3"> </div>
+          <div class="col-md-4 col-sm-4"> </div>
           <button type="button" class="btn btn-success" style="width: 100%;">ADD TO CART</button>
           <hr>
           <div style="cursor:hand" onclick="productHiddenText(this)">
@@ -610,157 +695,25 @@
           <hr>
 
         </div>
-      </div>
-    </div>
-    <div id="SLIM-FIT-CHINOS" class="tab-inner">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-md-6 col-sm-3">
-          <p>Home/SLIM FIT CHINOS</p>
-        </div>
-        <div class="col-md-3 col-sm-3"> </div>
-        <div class="col-md-3 col-sm-3"> </div>
         <div class="col"></div>
       </div>
-
       <div class="row">
-        <div class="col-md-3 col-sm-3"></div>
-        <div class="col-md-3 col-sm-3">
-          <img id="slim_fit_chinos_model" src="./img/slim_fit_chinos/slim_fit_chinos1_big.png"></img>
-          <div class="w-100"></div>
-          <input type="image" src="./img/slim_fit_chinos/slim_fit_chinos1.png"
-            onclick="productImage(this,'slim_fit_chinos')">
-          <input type="image" src="./img/slim_fit_chinos/slim_fit_chinos2.png"
-            onclick="productImage(this,'slim_fit_chinos')">
-          <div class="w-100"></div>
-          <div>I'm a product description. I’m a great place to include more information about your product. Buyers like
+        <div class="col"></div>
+        <div class="col-md-4 col-sm-4">
+          <input id="btnSmallProduct1-1" type="image" src="./img/women/small_product/product1-1.png"
+            onclick="onClickBtnSmallProduct(this)">
+          <input id="btnSmallProduct1-2" type="image" src="../img/women/small_product/product1-2.png"
+            onclick="onClickBtnSmallProduct(this)">
+          <div>
+            I'm a product description. I’m a great place to include more information about your product. Buyers like
             to know what they’re getting before they purchase.</div>
         </div>
-        <div class="col-md-3 col-sm-3">
-          <h4> SLIM FIT CHINOS</h4>
-          <div class="w-100"></div>
-          <h6> SKU: 0009</h6>
-          <div class="w-100"></div>
-          <h4> NT$45.00</h4>
-          <div class="w-100"></div>
-          <div class="form-group">
-            <label for="sel1">Size:</label>
-            <select class="form-control">
-              <option selected disabled hidden>Select</option>
-              <option>30</option>
-              <option>31</option>
-              <option>32</option>
-              <option>33</option>
-              <option>34</option>
-            </select>
-            <label for="sel2">Quantity:</label>
-            <div class="input-group mb-3">
-              <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-            </div>
-
-          </div>
-          <div class="col-md-3 col-sm-3"> </div>
-          <button type="button" class="btn btn-success" style="width: 100%;">ADD TO CART</button>
-          <hr>
-          <div style="cursor:hand" onclick="productHiddenText(this)">
-            <b>PRODUCT INFO</b>
-            <div id="productText2-1" style="display:block">I'm a product detail. I'm a great place to add more
-              information
-              about your product such as sizing, material, care and cleaning instructions. This is also a great space to
-              write what makes this product special and how your customers can benefit from this item. Buyers like to
-              know
-              what they’re getting before they purchase, so give them as much information as possible so they can buy
-              with
-              confidence and certainty.</div>
-          </div>
-          <hr>
-          <div style="cursor:hand" onclick="productHiddenText(this)">
-            <b>RETURN AND REFUND POLICY</b>
-            <div id="productText2-2" style="display:block">I’m a Return and Refund policy. I’m a great place to let your
-              customers know what to do in case they are dissatisfied with their purchase. Having a straightforward
-              refund
-              or exchange policy is a great way to build trust and reassure your customers that they can buy with
-              confidence.</div>
-          </div>
-          <hr>
-
-        </div>
-      </div>
-
-    </div>
-    <div id="PRINTED-CHIFFON-DRESS" class="tab-inner">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-md-6 col-sm-3">
-          <p>Home/PRINTED CHIFFON DRESS</p>
-        </div>
-        <div class="col-md-3 col-sm-3"> </div>
-        <div class="col-md-3 col-sm-3"> </div>
+        <div class="col-md-4 col-sm-4"> </div>
         <div class="col"></div>
       </div>
-
-      <div class="row">
-        <div class="col-md-3 col-sm-3"></div>
-        <div class="col-md-3 col-sm-3">
-          <img id="printed_chiffion_dress" src="./img/slim_fit_chinos/slim_fit_chinos1_big.png"></img>
-          <div class="w-100"></div>
-          <input type="image" src="./img/slim_fit_chinos/slim_fit_chinos1.png"
-            onclick="productImage(this,'printed_chiffion_dress')">
-          <input type="image" src="./img/slim_fit_chinos/slim_fit_chinos2.png"
-            onclick="productImage(this,'printed_chiffion_dress')">
-          <div class="w-100"></div>
-          <div>I'm a product description. I’m a great place to include more information about your product. Buyers like
-            to know what they’re getting before they purchase.</div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-          <h4> PRINTED CHIFFON DRESS</h4>
-          <div class="w-100"></div>
-          <h6> SKU: 0009</h6>
-          <div class="w-100"></div>
-          <h4> NT$45.00</h4>
-          <div class="w-100"></div>
-          <div class="form-group">
-            <label for="sel1">Size:</label>
-            <select class="form-control">
-              <option selected disabled hidden>Select</option>
-              <option>S</option>
-              <option>M</option>
-              <option>L</option>
-            </select>
-            <label for="sel2">Quantity:</label>
-            <div class="input-group mb-3">
-              <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-            </div>
-
-          </div>
-          <div class="col-md-3 col-sm-3"> </div>
-          <button type="button" class="btn btn-success" style="width: 100%;">ADD TO CART</button>
-          <hr>
-          <div style="cursor:hand" onclick="productHiddenText(this)">
-            <b>PRODUCT INFO</b>
-            <div id="productText3-1" style="display:block">I'm a product detail. I'm a great place to add more
-              information
-              about your product such as sizing, material, care and cleaning instructions. This is also a great space to
-              write what makes this product special and how your customers can benefit from this item. Buyers like to
-              know
-              what they’re getting before they purchase, so give them as much information as possible so they can buy
-              with
-              confidence and certainty.</div>
-          </div>
-          <hr>
-          <div style="cursor:hand" onclick="productHiddenText(this)">
-            <b>RETURN AND REFUND POLICY</b>
-            <div id="productText3-2" style="display:block">I’m a Return and Refund policy. I’m a great place to let your
-              customers know what to do in case they are dissatisfied with their purchase. Having a straightforward
-              refund
-              or exchange policy is a great way to build trust and reassure your customers that they can buy with
-              confidence.</div>
-          </div>
-          <hr>
-
-        </div>
-      </div>
     </div>
+
+
     <div id="ACCESSORIES" class="tab-inner">
       <div class="mx-auto text-center">
         <h1 class="display-4">ACCESSORIES</h1>
@@ -768,8 +721,13 @@
       <div class="row">
         <div class="col"> </div>
         <div class="col-md-2 col-sm-6">
-          <div class="inner">
-            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
+
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="accessories-productCard">
+            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product1-1')">
+              <img src="./img/accessories/product1-1.png" class="card-img-top " alt="#">
+            </a>
           </div>
           <div class=" text-center women-man-cardText">
             <h6> <small>I'm a Product</small></h6>
@@ -777,167 +735,203 @@
           </div>
         </div>
         <div class="col-md-2 col-sm-6">
-          <div class="inner">
-            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-          </div>
+          <div class="accessories-productCard">
+            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product2-1')">
+              <img src="./img/accessories/product2-1.png" class="card-img-top " alt="#">
+            </a>
+          </div> 
           <div class=" text-center women-man-cardText">
             <h6> <small>I'm a Product</small></h6>
             <h6> <small>NT19.99</small></h6>
           </div>
         </div>
         <div class="col-md-2 col-sm-6">
-            <div class="inner">
-              <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-            </div>
-            <div class=" text-center women-man-cardText">
-              <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-              <div class="inner">
-                <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-              </div>
-              <div class=" text-center women-man-cardText">
-                <h6> <small>I'm a Product</small></h6>
-                <h6> <small>NT19.99</small></h6>
-              </div>
-            </div>
+
+        </div>
         <div class="col"> </div>
-        
+
       </div>
       <div class="row">
-          <div class="col"> </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="inner">
-              <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-            </div>
-            <div class=" text-center women-man-cardText">
-              <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-            <div class="inner">
-              <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-            </div>
-            <div class=" text-center women-man-cardText">
-              <h6> <small>I'm a Product</small></h6>
-              <h6> <small>NT19.99</small></h6>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-6">
-              <div class="inner">
-                <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-              </div>
-              <div class=" text-center women-man-cardText">
-                <h6> <small>I'm a Product</small></h6>
-                <h6> <small>NT19.99</small></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-6">
-                <div class="inner">
-                  <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                </div>
-                <div class=" text-center women-man-cardText">
-                  <h6> <small>I'm a Product</small></h6>
-                  <h6> <small>NT19.99</small></h6>
-                </div>
-              </div>
-          <div class="col"> </div>
-          
+        <div class="col"> </div>
+        <div class="col-md-2 col-sm-6">
+
         </div>
-  
+        <div class="col-md-2 col-sm-6">
+          <div class="accessories-productCard">
+            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product1-1')">
+              <img src="./img/accessories/product1-1.png" class="card-img-top " alt="#">
+            </a>
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>
+                <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
+              </small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="accessories-productCard">
+            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product2-1')">
+              <img src="./img/accessories/product2-1.png" class="card-img-top " alt="#">
+            </a>
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>
+                <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
+              </small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col"> </div>
+
+      </div>
+
 
     </div>
+    <div id="ACCESSORIES-PRODUCT" class="tab-inner">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-4 col-sm-4">
+          <p id="productTitleName2-1">Home/I'm a Product</p>
+        </div>
+        <div class="col-md-4 col-sm-4"> </div>
+
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-4 col-sm-4 mw-100">
+          <img id="productImg2-1" class="singleProductImage productImg"
+            src="./img/women/view_product/product1-1.png"></img>
+
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <h4> I'm a Product</h4>
+          <div class="w-100"></div>
+          <h6> SKU: 0004</h6>
+          <div class="w-100"></div>
+          <h4 id="productPrice2-1"> NT$120.00</h4>
+          <div class="w-100"></div>
+          <div class="form-group">
+    
+            <label for="sel2">Quantity:</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+
+          </div>
+          <div class="col-md-4 col-sm-4"> </div>
+          <button type="button" class="btn btn-success" style="width: 100%;">ADD TO CART</button>
+          <hr>
+          <div style="cursor:hand" onclick="productHiddenText(this)">
+            <b>PRODUCT INFO</b>
+            <div id="productText1-1" style="display:block">I'm a product detail. I'm a great place to add more
+              information
+              about your product such as sizing, material, care and cleaning instructions. This is also a great space to
+              write what makes this product special and how your customers can benefit from this item. Buyers like to
+              know
+              what they’re getting before they purchase, so give them as much information as possible so they can buy
+              with
+              confidence and certainty.</div>
+          </div>
+          <hr>
+          <div style="cursor:hand" onclick="productHiddenText(this)">
+            <b>RETURN AND REFUND POLICY</b>
+            <div id="productText1-2" style="display:block">I’m a Return and Refund policy. I’m a great place to let your
+              customers know what to do in case they are dissatisfied with their purchase. Having a straightforward
+              refund
+              or exchange policy is a great way to build trust and reassure your customers that they can buy with
+              confidence.</div>
+          </div>
+          <hr>
+
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-4 col-sm-4">
+          <input id="btnSmallProduct2-1" type="image" src="./img/women/small_product/product1-1.png"
+            onclick="onClickBtnSmallProduct(this)">
+          <input id="btnSmallProduct2-2" type="image" src="./img/women/small_product/product1-2.png"
+            onclick="onClickBtnSmallProduct(this)">
+          <div>
+            I'm a product description. I’m a great place to include more information about your product. Buyers like
+            to know what they’re getting before they purchase.</div>
+        </div>
+        <div class="col-md-4 col-sm-4"> </div>
+        <div class="col"></div>
+      </div>
+    </div>
     <div id="SALE" class="tab-inner">
-        <div class="mx-auto text-center">
-            <h1 class="display-4">SALE</h1>
+      <div class="mx-auto text-center">
+        <h1 class="display-4">SALE</h1>
+      </div>
+      <div class="row">
+        <div class="col"> </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="inner">
+            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
           </div>
-          <div class="row">
-            <div class="col"> </div>
-            <div class="col-md-2 col-sm-6">
-              <div class="inner">
-                <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-              </div>
-              <div class=" text-center women-man-cardText">
-                <h6> <small>I'm a Product</small></h6>
-                <h6> <small>NT19.99</small></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-6">
-              <div class="inner">
-                <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-              </div>
-              <div class=" text-center women-man-cardText">
-                <h6> <small>I'm a Product</small></h6>
-                <h6> <small>NT19.99</small></h6>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-6">
-                <div class="inner">
-                  <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                </div>
-                <div class=" text-center women-man-cardText">
-                  <h6> <small>I'm a Product</small></h6>
-                  <h6> <small>NT19.99</small></h6>
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                  <div class="inner">
-                    <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                  </div>
-                  <div class=" text-center women-man-cardText">
-                    <h6> <small>I'm a Product</small></h6>
-                    <h6> <small>NT19.99</small></h6>
-                  </div>
-                </div>
-            <div class="col"> </div>
-            
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>NT19.99</small></h6>
           </div>
-          <div class="row">
-              <div class="col"> </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="inner">
-                  <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                </div>
-                <div class=" text-center women-man-cardText">
-                  <h6> <small>I'm a Product</small></h6>
-                  <h6> <small>NT19.99</small></h6>
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="inner">
-                  <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                </div>
-                <div class=" text-center women-man-cardText">
-                  <h6> <small>I'm a Product</small></h6>
-                  <h6> <small>NT19.99</small></h6>
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                  <div class="inner">
-                    <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                  </div>
-                  <div class=" text-center women-man-cardText">
-                    <h6> <small>I'm a Product</small></h6>
-                    <h6> <small>NT19.99</small></h6>
-                  </div>
-                </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="inner">
-                      <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-                    </div>
-                    <div class=" text-center women-man-cardText">
-                      <h6> <small>I'm a Product</small></h6>
-                      <h6> <small>NT19.99</small></h6>
-                    </div>
-                  </div>
-              <div class="col"> </div>
-              
-            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="inner">
+            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>NT19.99</small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col"> </div>
+
+      </div>
+      <div class="row">
+        <div class="col"> </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="inner">
+            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>NT19.99</small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="inner">
+            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>NT19.99</small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col"> </div>
+
+      </div>
     </div>
     <div id="MY_CART" class="tab-inner">
+
+
       <p>tab02內容</p>
     </div>
     <div id="MY_ACCOUNT" class="tab-inner">
@@ -983,6 +977,7 @@
 
 
 
+ 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
@@ -993,7 +988,10 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/magnifier.js"></script>
-    <script type="text/javascript" src="./js/product.js"></script>
+    
+    
+    
+
 </body>
 
 </html>
