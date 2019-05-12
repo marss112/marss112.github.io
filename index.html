@@ -32,6 +32,25 @@
 
 <body>
   <style>
+    .btn-circle.btn-xl {
+      width: 70px;
+      height: 70px;
+      padding: 10px 16px;
+      border-radius: 35px;
+      font-size: 24px;
+      line-height: 1.33;
+    }
+
+    .btn-circle {
+      width: 30px;
+      height: 30px;
+      padding: 6px 0px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.42857;
+    }
+
     .dropdown:hover>.dropdown-menu {
       display: block;
     }
@@ -161,9 +180,9 @@
           var $img = $(this).children("a").children("img");
           var imgSrc = $img.attr("src");
           $img.attr('src', "./img/men/product" + imgSrc[19] + "-1.png");
-        //  console.log(imgSrc[27]);
-        //  console.log("./img/accessories/product"+  imgSrc[25] + "-2.png");
-         
+          //  console.log(imgSrc[27]);
+          //  console.log("./img/accessories/product"+  imgSrc[25] + "-2.png");
+
         }
         );
       });
@@ -175,14 +194,33 @@
 
 
           var imgSrc = $img.attr("src");
-       
+
           $img.attr('src', "./img/accessories/product" + imgSrc[25] + "-2.png");
         }, function () {
           var $img = $(this).children("a").children("img");
           var imgSrc = $img.attr("src");
           $img.attr('src', "./img/accessories/product" + imgSrc[25] + "-1.png");
 
-         
+
+        }
+        );
+      });
+      $(function () {
+        var imgNumberSrc = "";
+        // var $img = $('.productCard a img');
+        $('.sale-productCard').hover(function () {
+          var $img = $(this).children("a").children("img");
+
+
+          var imgSrc = $img.attr("src");
+
+          $img.attr('src', "./img/sale/product" + imgSrc[18] + "-2.png");
+        }, function () {
+          var $img = $(this).children("a").children("img");
+          var imgSrc = $img.attr("src");
+          $img.attr('src', "./img/sale/product" + imgSrc[18] + "-1.png");
+
+
         }
         );
       });
@@ -221,21 +259,21 @@
             <a class="nav-link nav-small" href="#MY_ACCOUNT">MY ACCOUNT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-small" href="#">RETURN</a>
+            <a class="nav-link nav-small" href="#RETURN">RETURN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-small" href="#">PAY BILLS</a>
+            <a class="nav-link nav-small" href="#PAY-BILLS">PAY BILLS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-small" href="#">SETTINGS</a>
+            <a class="nav-link nav-small" href="#SETTINGS">SETTINGS</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-small" data-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false">MORE</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">MORE</a>
-              <a class="dropdown-item" href="#">MY STYLISTS</a>
-              <a class="dropdown-item" href="#">LOG OUT</a>
+              <a class="dropdown-item" href="#MORE">MORE</a>
+              <a class="dropdown-item" href="#MY-STYLISTS">MY STYLISTS</a>
+              <a class="dropdown-item" href="#LOG-OUT">LOG OUT</a>
 
           </li>
       </div>
@@ -725,7 +763,7 @@
         </div>
         <div class="col-md-2 col-sm-6">
           <div class="accessories-productCard">
-            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product1-1')">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product1-1')">
               <img src="./img/accessories/product1-1.png" class="card-img-top " alt="#">
             </a>
           </div>
@@ -736,10 +774,10 @@
         </div>
         <div class="col-md-2 col-sm-6">
           <div class="accessories-productCard">
-            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product2-1')">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product2-1')">
               <img src="./img/accessories/product2-1.png" class="card-img-top " alt="#">
             </a>
-          </div> 
+          </div>
           <div class=" text-center women-man-cardText">
             <h6> <small>I'm a Product</small></h6>
             <h6> <small>NT19.99</small></h6>
@@ -758,7 +796,7 @@
         </div>
         <div class="col-md-2 col-sm-6">
           <div class="accessories-productCard">
-            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product1-1')">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product1-1')">
               <img src="./img/accessories/product1-1.png" class="card-img-top " alt="#">
             </a>
           </div>
@@ -771,7 +809,7 @@
         </div>
         <div class="col-md-2 col-sm-6">
           <div class="accessories-productCard">
-            <a href="#ACCESSORIES-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product2-1')">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'accessories','product2-1')">
               <img src="./img/accessories/product2-1.png" class="card-img-top " alt="#">
             </a>
           </div>
@@ -791,7 +829,83 @@
 
 
     </div>
-    <div id="ACCESSORIES-PRODUCT" class="tab-inner">
+    <div id="SALE" class="tab-inner">
+      <div class="mx-auto text-center">
+        <h1 class="display-4">SALE</h1>
+      </div>
+      <div class="row">
+        <div class="col"> </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="sale-productCard">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'sale','product1-1')">
+              <img src="./img/sale/product1-1.png" class="card-img-top " alt="#">
+            </a>
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>NT19.99</small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="sale-productCard">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'sale','product2-1')">
+              <img src="./img/sale/product2-1.png" class="card-img-top " alt="#">
+            </a>
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>NT19.99</small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col"> </div>
+
+      </div>
+      <div class="row">
+        <div class="col"> </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="sale-productCard">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'sale','product1-1')">
+              <img src="./img/sale/product1-1.png" class="card-img-top " alt="#">
+            </a>
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>
+                <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
+              </small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="sale-productCard">
+            <a href="#ACCESSORIES-SALE-PRODUCT" class="img-link" onclick="productLoad(this,'sale','product2-1')">
+              <img src="./img/sale/product2-1.png" class="card-img-top " alt="#">
+            </a>
+          </div>
+          <div class=" text-center women-man-cardText">
+            <h6> <small>I'm a Product</small></h6>
+            <h6> <small>
+                <h6> <small><S> NT19.99</S> &#160NT14.99</small></h6>
+              </small></h6>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+
+        </div>
+        <div class="col"> </div>
+
+      </div>
+
+    </div>
+    <div id="ACCESSORIES-SALE-PRODUCT" class="tab-inner">
       <div class="row">
         <div class="col"></div>
         <div class="col-md-4 col-sm-4">
@@ -816,7 +930,7 @@
           <h4 id="productPrice2-1"> NT$120.00</h4>
           <div class="w-100"></div>
           <div class="form-group">
-    
+
             <label for="sel2">Quantity:</label>
             <div class="input-group mb-3">
               <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
@@ -866,131 +980,291 @@
         <div class="col"></div>
       </div>
     </div>
-    <div id="SALE" class="tab-inner">
-      <div class="mx-auto text-center">
-        <h1 class="display-4">SALE</h1>
-      </div>
-      <div class="row">
-        <div class="col"> </div>
-        <div class="col-md-2 col-sm-6">
 
-        </div>
-        <div class="col-md-2 col-sm-6">
-          <div class="inner">
-            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-          </div>
-          <div class=" text-center women-man-cardText">
-            <h6> <small>I'm a Product</small></h6>
-            <h6> <small>NT19.99</small></h6>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6">
-          <div class="inner">
-            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-          </div>
-          <div class=" text-center women-man-cardText">
-            <h6> <small>I'm a Product</small></h6>
-            <h6> <small>NT19.99</small></h6>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6">
-
-        </div>
-        <div class="col"> </div>
-
-      </div>
-      <div class="row">
-        <div class="col"> </div>
-        <div class="col-md-2 col-sm-6">
-
-        </div>
-        <div class="col-md-2 col-sm-6">
-          <div class="inner">
-            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-          </div>
-          <div class=" text-center women-man-cardText">
-            <h6> <small>I'm a Product</small></h6>
-            <h6> <small>NT19.99</small></h6>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6">
-          <div class="inner">
-            <img src="/img/accessories/wallet.png" class="card-img-top " alt="#">
-          </div>
-          <div class=" text-center women-man-cardText">
-            <h6> <small>I'm a Product</small></h6>
-            <h6> <small>NT19.99</small></h6>
-          </div>
-        </div>
-        <div class="col-md-2 col-sm-6">
-
-        </div>
-        <div class="col"> </div>
-
-      </div>
-    </div>
     <div id="MY_CART" class="tab-inner">
-
-
-      <p>tab02內容</p>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-6 text-center" style="">
+               <div style="float: left;width:50%;">
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio"  id="cartRadios1" value="option1" >
+                      <label class="form-check-label" for="exampleRadios1">
+                       
+                      </label>
+                    </div>
+                   <img id="cartImg1" src="./img/women/product1-1.png" class="fillDivImg"/>
+                   
+               </div>
+               <div style="float: left;width:50%;">
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio"  id="cartRadios2" value="option1" >
+                      <label class="form-check-label" for="exampleRadios1">
+                       
+                      </label>
+                    </div>
+                   <img id="cartImg2" src="./img/women/product1-1.png" class="fillDivImg"/>
+                   
+               </div>
+              
+              <div class="w-100"></div>
+              <div style="float: left;width:50%;">
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio"  id="cartRadios3" value="option1" >
+                      <label class="form-check-label" for="exampleRadios1">
+                       
+                      </label>
+                    </div>
+                   <img id="cartImg3" src="./img/women/product1-1.png" class="fillDivImg"/>
+                   
+               </div>
+               <div style="float: left;width:50%;">
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio"  id="cartRadios4" value="option1" >
+                      <label class="form-check-label" for="exampleRadios1">
+                       
+                      </label>
+                    </div>
+                   <img id="cartImg4" src="./img/women/product1-1.png" class="fillDivImg"/>
+                   
+               </div>
+              
+            </div>
+            <div class="col-md-3"> <button type="button" class="btn btn-outline-danger" >LOG OUT</button>
+            </div>
+            <div class="col"></div>
+          </div>
     </div>
     <div id="MY_ACCOUNT" class="tab-inner">
-      <p>MY_ACCOUNT</p>
+
     </div>
-
-
-
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-      <div class="row">
-        <div class="col-md-3 col-sm-2">
+    <div id="RETURN" class="tab-inner">
+      <div class="row" style="background-color:pink;">
+        <div class="col"></div>
+        <div class="col-md-8 text-center">
+          <h2>MAKE YOUR RETURNS EASIER!</h2>
+          <div class="w-100"></div>
+          <h4>We’re always ready to help! </h4>
+          <div>
+            <div style="float:left; width: 50%;">
+              <input type=" text" class=" text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                style="width:100%" placeholder="name">
+              <input type=" text" class=" text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                style="width:100%;" placeholder="email">
+              <input type=" text" class=" text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                style="width:100%;" placeholder="id">
+            </div>
+            <div style="float:right; width: 50%;">
+              <input type=" text" class=" text-center" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                style="width:100%; height:90px;" placeholder="problem">
+              <button type="button" class="btn btn-warning">Submit</button>
+              <h6>Thanks for submitting!</h6>
+            </div>
+          </div>
         </div>
-        <div class="col-md-1 col-sm-1">
-          <h5>VESTE</h5>
-        </div>
-        <div class="col-md-2 col-sm-1">
-          <h6>CUSTOMER CARE</h6>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Shipping Policy</a></li>
-            <li><a class="text-muted" href="#">Returns Policy</a></li>
-            <li><a class="text-muted" href="#">Contact Us</a></li>
-            <li><a class="text-muted" href="#">About Us</a></li>
-          </ul>
-        </div>
-        <div class="col-md-1 col-sm-1">
-          <h6>VIST OUR STORE</h6>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">
-                500 Terry Francois Street<br>
-                San Francisco, CA 94158</a></li>
-
-          </ul>
-        </div>
-        <div class="col-md-1 col-sm-1">
-          <h6>STAY CONNECTED</h6>
-
-        </div>
-        <div class="col-md col-sm">
-
-        </div>
+        <div class="col"></div>
       </div>
-    </footer>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-4 ">
+          <h6>FAQ</h6>
+          <div class="w-100"></div>
+          <h6>How do I track my order?</h6>
+          <div class="w-100"></div>
+          <br>
+          <h6>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+            click me to add your own content and make changes to the font. I’m a great place for you to tell a story and
+            let your users know a little more about you.</h6>
+          <div class="w-100"></div>
+          <br>
+          <br>
+          <h6>What are your delivery options?</h6>
+          <div class="w-100"></div>
+          <br>
+          <h6>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+            click me to add your own content and make changes to the font. I’m a great place for you to tell a story and
+            let your users know a little more about you.</h6>
+          <div class="w-100"></div>
+          <br>
+          <br>
+          <h6>How do I return an item?</h6>
+          <div class="w-100"></div>
+          <br>
+          I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+          click me to add your own content and make changes to the font.</h6>
+          <div class="w-100"></div>
+        </div>
+        <div class="col-md-4 ">
+          <h6>&nbsp</h6>
+          <div class="w-100"></div>
+          <h6>How can I contact your couriers?</h6>
+          <div class="w-100"></div>
+          <br>
+          <h6>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+            click me to add your own content and make changes to the font</h6>
+          <div class="w-100"></div>
+          <br>
+          <br>
+          <h6>Do you provide International delivery?</h6>
+          <div class="w-100"></div>
+          <br>
+          <h6>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+            click me to add your own content and make changes to the font</h6>
+          <div class="w-100"></div>
+          <br>
+          <br>
+          <h6>What is your returns policy?</h6>
+          <div class="w-100"></div>
+          <br>
+          I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+          click me to add your own content and make changes to the font</h6>
+          <div class="w-100"></div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div id="PAY-BILLS" class="tab-inner">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-lg-3 text-center">
+          <img src="./img/pay-bills/product1-1.png">
+          <div class="w-100"></div>
+          <button type="button" class="btn btn btn-outline-dark">PAY NOW</button>
+        </div>
+        <div class="col-lg-3 text-center">
+          <img src="./img/pay-bills/product1-1.png">
+          <div class="w-100"></div>
+          <button type="button" class="btn btn btn-outline-dark">PAY NOW</button>
+        </div>
+        <div class="col-lg-3 text-center">
+          <img src="./img/pay-bills/product1-1.png">
+          <div class="w-100"></div>
+          <button type="button" class="btn btn btn-outline-dark">PAY NOW</button>
+        </div>
+        <div class="col"></div>
+      </div>
 
+    </div>
+    <div id="SETTINGS" class="tab-inner">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-8 text-center">
+          <h2>VISIT US AT OUR STORE AGAIN</h2>
+          <div class="w-100"></div>
 
+          <br>
+          <br>
+          <br>
+          <h4>VISIT US AT OUR STORE AGAIN
+            My Transactions </h4>
+          <div class="w-100"></div>
+          <a class="text-muted" href="#">
+            <h4>My Transactions </h4>
+          </a>
+          <div class="w-100"></div>
+          <a class="text-muted" href="#">
+            <h4>Manage Points </h4>
+          </a>
+          <div class="w-100"></div>
+          <a class="text-muted" href="#">
+            <h4>Language </h4>
+          </a>
+          <div class="w-100"></div>
+          <a class="text-muted" href="#">
+            <h4>My Measurments </h4>
+          </a>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div id="MY-STYLISTS" class="tab-inner">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-md-8 ">
+          <img src="./img/my_stylist/stylist1.png">
+          <div class="w-100"></div>
+          <br>
+          <img src="./img/my_stylist/stylist2.png">
+          <div class="w-100"></div>
+          <br>
 
+          <img src="./img/my_stylist/stylist3.png">
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <div id="LOG-OUT" class="tab-inner">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-md-8 text-center">
+            <div class="w-100"></div>
+            <br>
+            <br>
+            <br>
+            <button type="button" class="btn btn-outline-danger" style="width:200px;height:200px;">LOG OUT</button>
+            <div class="w-100"></div>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="col"></div>
+        </div>
+    
+      </div>
+  </div>
  
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/magnifier.js"></script>
-    
-    
-    
+ 
+  </div>
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-md-3 col-sm-2">
+      </div>
+      <div class="col-md-1 col-sm-1">
+        <h5>VESTE</h5>
+      </div>
+      <div class="col-md-2 col-sm-1">
+        <h6>CUSTOMER CARE</h6>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Shipping Policy</a></li>
+          <li><a class="text-muted" href="#">Returns Policy</a></li>
+          <li><a class="text-muted" href="#">Contact Us</a></li>
+          <li><a class="text-muted" href="#">About Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-1 col-sm-1">
+        <h6>VIST OUR STORE</h6>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">
+              500 Terry Francois Street<br>
+              San Francisco, CA 94158</a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-1 col-sm-1">
+        <h6>STAY CONNECTED</h6>
+
+      </div>
+      <div class="col-md col-sm">
+
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/magnifier.js"></script>
+
+
+
 
 </body>
 

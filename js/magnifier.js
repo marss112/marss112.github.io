@@ -50,7 +50,7 @@ function magnify(imgID, zoom) {
   
 
     function mouseout(e) {
-      console.log("mouse out ");
+    //  console.log("mouse out ");
       glass.style.visibility="hidden"; 
     }
     function getCursorPos(e) {
@@ -77,9 +77,9 @@ function magnify(imgID, zoom) {
   
     return flag;  
  }
- if(IsPC()) {
-  magnify("productImg", 3);
-  magnify("slim_fit_chinos_model", 3);
-  magnify("printed_chiffion_dress", 3);
- }
+/* if(IsPC()) {
+      magnify("productImg1-1", 3);
+      magnify("productImg2-1", 3);
+      //magnify("printed_chiffion_dress", 3);
+   }*/
    
