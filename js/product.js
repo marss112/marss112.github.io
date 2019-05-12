@@ -30,7 +30,7 @@ function productLoad(e, kind, imgName) {
     * 如果編碼大於10，就判斷原本數字前一個是不是英文，如果不是英文，則擷取後面一位字元
     */
    btnSmallProductName[1] = tmp + "-2";
-   this.imgName=imgName;
+   
    this.kind=kind;
 
    if (kind == "women") {
@@ -44,6 +44,8 @@ function productLoad(e, kind, imgName) {
       }
       else {
          imgName = "product2-1";
+         btnSmallProductName[0]="product2-1";
+         btnSmallProductName[1]="product2-2";
       }
    }
    else if (kind == "men") {
@@ -55,6 +57,8 @@ function productLoad(e, kind, imgName) {
       }
       else {
          imgName = "product2-1";
+         btnSmallProductName[0]="product2-1";
+         btnSmallProductName[1]="product2-2";
       }
    }
    else if (kind == "accessories") {
@@ -63,6 +67,8 @@ function productLoad(e, kind, imgName) {
       }
       else{
          imgName = "product2-1";
+         btnSmallProductName[0]="product2-1";
+         btnSmallProductName[1]="product2-2";
       }
       
    } 
@@ -72,9 +78,12 @@ function productLoad(e, kind, imgName) {
       }
       else{
          imgName = "product2-1";
+         btnSmallProductName[0]="product2-1";
+         btnSmallProductName[1]="product2-2";
       }
       
    }
+   this.imgName=imgName;
    var product_view = "./img/" + kind + "/view_product/" + imgName + ".png";
    this.product_view=product_view;
    if (kind == "men" || kind == "women") {
@@ -89,7 +98,6 @@ function productLoad(e, kind, imgName) {
       }
       document.getElementById("btnSmallProduct1-1").setAttribute("src", btnSmallProductNamePath + btnSmallProductName[0] + ".png");
       document.getElementById("btnSmallProduct1-2").setAttribute("src", btnSmallProductNamePath + btnSmallProductName[1] + ".png");
-      console.log(btnSmallProductNamePath + btnSmallProductName[1] + ".png");
    }
    else if (kind == "accessories" ||kind=="sale") { 
      
@@ -102,9 +110,11 @@ function productLoad(e, kind, imgName) {
       if (price.length > 0) {
          document.getElementById("productPrice2-1").innerText = price;
       }
-     
+      
       document.getElementById("btnSmallProduct2-1").setAttribute("src", btnSmallProductNamePath + btnSmallProductName[0] + ".png");
       document.getElementById("btnSmallProduct2-2").setAttribute("src", btnSmallProductNamePath + btnSmallProductName[1] + ".png");
+      console.log(btnSmallProductNamePath + btnSmallProductName[0] + ".png")
+      console.log(btnSmallProductNamePath + btnSmallProductName[1] + ".png")
    }
   /* if(IsPC()) {
       magnify("productImg1-1", 3);
@@ -118,18 +128,26 @@ function onClickBtnSmallProduct(e){
 
    var product_viewRootPath = "./img/" + kind + "/view_product/product" ;
    var productPath=[product_viewRootPath+tmp + "-1.png",product_viewRootPath+tmp + "-2.png"];
-   console.log("S:"+productPath[0]);
-   if(e.id=="btnSmallProduct1-1"){
+  
+   if(e.id=="btnSmallProduct1-1"){//women men
       document.getElementById("productImg1-1").setAttribute("src", productPath[0]);
+    //  console.log(productPath[0]);
    }
-   else if (e.id=="btnSmallProduct1-2"){
+   else if (e.id=="btnSmallProduct1-2"){//wonmen men product
       document.getElementById("productImg1-1").setAttribute("src", productPath[1]);
+    //  console.log(productPath[1]);
    }
-   else if (e.id=="btnSmallProduct2-1"){
+   else if (e.id=="btnSmallProduct2-1"){// accessorise sale
       document.getElementById("productImg2-1").setAttribute("src", productPath[0]);
+   //   console.log(productPath[0]);
    }
-   else if (e.id=="btnSmallProduct2-2"){
+   else if (e.id=="btnSmallProduct2-2"){// accessorise sale
       document.getElementById("productImg2-1").setAttribute("src", productPath[1]);
+    //  console.log(productPath[1]);
    }
+
+}
+function onClickAddCart(e){
+
 
 }
