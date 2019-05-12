@@ -251,9 +251,10 @@
               <a class="dropdown-item" href="#MEN">MEN</a>
               <a class="dropdown-item" href="#ACCESSORIES">ACCESSORIES</a>
               <a class="dropdown-item" href="#SALE">SALE</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-small" href="#MY_CART">MY CART</a>
+            <a class="nav-link nav-small" href="#MY_CART" onclick="cartLoad()">MY CART</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-small" href="#MY_ACCOUNT">MY ACCOUNT</a>
@@ -271,11 +272,12 @@
             <a class="nav-link dropdown-toggle nav-small" data-toggle="dropdown" href="#" role="button"
               aria-haspopup="true" aria-expanded="false">MORE</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#MORE">MORE</a>
+              
               <a class="dropdown-item" href="#MY-STYLISTS">MY STYLISTS</a>
               <a class="dropdown-item" href="#LOG-OUT">LOG OUT</a>
-
+            </div>
           </li>
+        </ul>
       </div>
       <div class="col-md "> </div>
     </div>
@@ -682,8 +684,8 @@
       <div class="row">
         <div class="col"></div>
         <div class="col-md-6 col-sm-6 ">
-          <img id="productImg1-1" class="singleProductImage productImg" src="./img/women/view_product/product1-1.png"
-            style="height:600px;"></img>
+          <img id="productImg1-1" class="singleProductImage " src="./img/women/view_product/product1-1.png"
+            style="height:600px; width: 100%;"></img>
           <input id="btnSmallProduct1-1" type="image" src="./img/women/small_product/product1-1.png"
             onclick="onClickBtnSmallProduct(this)">
           <input id="btnSmallProduct1-2" type="image" src="../img/women/small_product/product1-2.png"
@@ -702,19 +704,21 @@
           <div class="form-group">
             <label for="sel1">Size:</label>
             <select class="form-control">
-              <option selected disabled hidden>Select</option>
+              <!--  <option selected disabled hidden>Select</option>-->
               <option>S</option>
               <option>M</option>
               <option>L</option>
             </select>
             <label for="sel2">Quantity:</label>
             <div class="input-group mb-3">
-              <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <input id="productQuantity1-1" type="number" class="form-control"
+                aria-label="Amount (to the nearest dollar)" placeholder="1">
             </div>
 
           </div>
           <div class="col-md-4 col-sm-4"> </div>
-          <button type="button" class="btn btn-success" style="width: 100%;">ADD TO CART</button>
+          <button type="button" class="btn btn-success" style="width: 100%;" onclick="onClickAddCart(this)">ADD TO
+            CART</button>
           <hr>
           <div style="cursor:hand" onclick="productHiddenText(this)">
             <b>PRODUCT INFO</b>
@@ -924,8 +928,8 @@
       <div class="row">
         <div class="col"></div>
         <div class="col-md-6 col-sm-4 mw-100">
-          <img id="productImg2-1" class="singleProductImage productImg" src="./img/women/view_product/product1-1.png"
-            style="height:600px;"></img>
+          <img id="productImg2-1" class="singleProductImage " src="./img/women/view_product/product1-1.png"
+            style="height:600px; width: 100%;"></img>
           <input id="btnSmallProduct2-1" type="image" src="./img/women/small_product/product1-1.png"
             onclick="onClickBtnSmallProduct(this)">
           <input id="btnSmallProduct2-2" type="image" src="./img/women/small_product/product1-2.png"
@@ -945,7 +949,8 @@
 
             <label for="sel2">Quantity:</label>
             <div class="input-group mb-3">
-              <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <input id="productQuantity2-1" type="number" class="form-control"
+                aria-label="Amount (to the nearest dollar)" placeholder="1">
             </div>
 
           </div>
@@ -996,32 +1001,27 @@
     <div id="MY_CART" class="tab-inner">
       <div class="row">
         <div class="col"></div>
-        <div class="col-md-6 text-center" style="">
-          <div style="float: left;width:50%;">
+        <div class="col-md-6 text-center">
+          <div id="cartDiv1" style="float: left;width:50%; visibility: hidden;">
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="cartRadios1" value="option1">
+              <input class="form-check-input" type="checkbox" id="cartDeleteRadio1" value="option1">
               <label class="form-check-label" for="exampleRadios1">
-
               </label>
             </div>
             <img id="cartImg1" src="./img/women/product1-1.png" class="fillDivImg" />
-
           </div>
-          <div style="float: left;width:50%;">
+          <div id="cartDiv2" style="float: left;width:50%; visibility: hidden;">
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="cartRadios2" value="option1">
+              <input class="form-check-input" type="checkbox" id="cartDeleteRadio2" value="option2">
               <label class="form-check-label" for="exampleRadios1">
-
               </label>
             </div>
             <img id="cartImg2" src="./img/women/product1-1.png" class="fillDivImg" />
-
           </div>
-
           <div class="w-100"></div>
-          <div style="float: left;width:50%;">
+          <div id="cartDiv3" style="float: left;width:50%; visibility: hidden;">
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="cartRadios3" value="option1">
+              <input class="form-check-input" type="checkbox" id="cartDeleteRadio3" value="option3">
               <label class="form-check-label" for="exampleRadios1">
 
               </label>
@@ -1029,9 +1029,9 @@
             <img id="cartImg3" src="./img/women/product1-1.png" class="fillDivImg" />
 
           </div>
-          <div style="float: left;width:50%;">
+          <div id="cartDiv4" style="float: left;width:50%; visibility: hidden;">
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="cartRadios4" value="option1">
+              <input class="form-check-input" type="checkbox" id="cartDeleteRadio4" value="option4">
               <label class="form-check-label" for="exampleRadios1">
 
               </label>
@@ -1041,7 +1041,10 @@
           </div>
 
         </div>
-        <div class="col-md-3"> <button type="button" class="btn btn-outline-danger">LOG OUT</button>
+        <div class="col-md-3">
+          <div class="w-100"></div>
+          <br>
+          <button type="button" class="btn btn-danger" onclick="deleteProductFromCart()">DELETE</button>
         </div>
         <div class="col"></div>
       </div>
@@ -1191,7 +1194,7 @@
     <div id="MY-STYLISTS" class="tab-inner">
       <div class="row">
         <div class="col"></div>
-        <div class="col-md-8 ">
+        <div class="col-md-8 text-center">
           <img src="./img/my_stylist/stylist1.png">
           <div class="w-100"></div>
           <br>
