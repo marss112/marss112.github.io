@@ -46,9 +46,9 @@ function productLoad(e, kind, imgName) {
          price = "NT120.00"
       }
       else {
-         imgName = "product2-1";
+      /*  imgName = "product2-1";
          btnSmallProductName[0] = "product2-1";
-         btnSmallProductName[1] = "product2-2";
+         btnSmallProductName[1] = "product2-2";*/
       }
    }
    else if (kind == "men") {
@@ -59,15 +59,15 @@ function productLoad(e, kind, imgName) {
          price = "NT120.00"
       }
       else {
-         imgName = "product2-1";
+       /*  imgName = "product2-1";
          btnSmallProductName[0] = "product2-1";
-         btnSmallProductName[1] = "product2-2";
+         btnSmallProductName[1] = "product2-2";*/
       }
    }
    else if (kind == "accessories") {
       if (imgName == "product1-1") {
 
-      }
+      } 
       else {
          imgName = "product2-1";
          btnSmallProductName[0] = "product2-1";
@@ -136,19 +136,19 @@ function onClickBtnSmallProduct(e) {
    var productPath = [product_viewRootPath + tmp + "-1.png", product_viewRootPath + tmp + "-2.png"];
 
    if (e.id == "btnSmallProduct1-1") {//women men
-      document.getElementById("productImg1-1").setAttribute("src", productPath[0]);
+    //  document.getElementById("productImg1-1").setAttribute("src", productPath[0]);
       //  console.log(productPath[0]);
    }
    else if (e.id == "btnSmallProduct1-2") {//wonmen men product
-      document.getElementById("productImg1-1").setAttribute("src", productPath[1]);
+    //  document.getElementById("productImg1-1").setAttribute("src", productPath[1]);
       //  console.log(productPath[1]);
    }
    else if (e.id == "btnSmallProduct2-1") {// accessorise sale
-      document.getElementById("productImg2-1").setAttribute("src", productPath[0]);
+     // document.getElementById("productImg2-1").setAttribute("src", productPath[0]);
       //   console.log(productPath[0]);
    }
    else if (e.id == "btnSmallProduct2-2") {// accessorise sale
-      document.getElementById("productImg2-1").setAttribute("src", productPath[1]);
+     // document.getElementById("productImg2-1").setAttribute("src", productPath[1]);
       //  console.log(productPath[1]);
    }
 
@@ -204,3 +204,6 @@ function deleteProductFromCart() {
 }
 
 
+function alertShow(s){
+   alert(s);
+}
